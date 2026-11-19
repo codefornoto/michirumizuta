@@ -212,7 +212,7 @@ dialog::backdrop{background:#171a19a8}
 .exposure-record{background:#dfe9ec}
 .shell-rows{font: .86rem/1.37 ui-monospace,monospace;display:flex;flex-wrap:wrap;gap:6px;margin:7px 0}
 .shell-rows span{padding:4px 6px;background:#e2ebea;border:1px solid #c8d5d2}
-.amber-phrase{position:absolute;bottom:12%;inset-inline:4%;text-align:center;color:#fff6d7;font:600 clamp(1.05rem,5vw,2rem)/1.4 var(--serif);letter-spacing:.23em;text-shadow:0 2px 8px #000;background:#302007b8;padding:3px;animation:enter .6s ease-out}
+.amber-phrase{position:absolute;bottom:12%;inset-inline:4%;text-align:center;text-wrap:balance;color:#fff6d7;font:600 clamp(.95rem,4vw,1.6rem)/1.4 var(--serif);letter-spacing:.09em;text-shadow:0 2px 8px #000;background:#302007b8;padding:5px 8px;animation:enter .6s ease-out}
 .terminal{--bg:#182328;--ink:#f2f4ed;--mute:#b8c6c7;--line:#455e66;color:var(--ink);background:var(--bg);width:min(100%,500px)}
 .terminal[open]{display:flex;flex-direction:column}
 .terminal .modal-head,.terminal .entry{flex:none}
@@ -1266,7 +1266,7 @@ function openArtwork(id) {
       const phrase = $('[data-amber]',dialog);
       if (!phrase || state.route.art !== id) return;
       phrase.hidden = false;
-      phrase.textContent = CONFIG.secretChatPhrase;
+      phrase.textContent = `Chat me, "${CONFIG.secretChatPhrase}"`;
     },CONFIG.amberDelayMs);
   }
 }
