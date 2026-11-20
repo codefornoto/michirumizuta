@@ -242,15 +242,19 @@ dialog::backdrop{background:#171a19a8}
 .terminal .verification-choices button{min-height:44px;font-size:.85rem;line-height:1.3;overflow-wrap:anywhere}
 .terminal .phone-indicator{display:flex;align-items:center;gap:5px;color:#bedcce}
 .terminal .call-time{font-size:.82rem}
-.terminal .entry .disconnect{background:#f1d9d1;border-color:#f1d9d1}
+.terminal .call-controls{display:flex;align-items:center;gap:12px;flex:none}
+.terminal .hangup{color:#fce9e7;background:#6d3c41;border:1px solid #b88185;border-radius:5px;padding:5px 9px;font-size:.72rem;line-height:1.4;min-height:34px;white-space:nowrap}
+.terminal .hangup:hover{background:#864b51}
 .terminal .entry .choice-label{font-size:.72rem;color:var(--mute)}
 .news{--bg:#fffdf8;--ink:#272824;--mute:#626157;--line:#dedbd0;--accent:#942f34;width:100%;height:100dvh;max-width:none;max-height:none;margin:0;box-shadow:none}
+.news.truth-news,.news-reader.truth-news{--accent:#315f59}
 .news-bar{background:var(--accent);color:#fff;padding:8px 0;font-size:.7rem;letter-spacing:.14em}
 .news-wrap{width:min(100% - 54px,1010px);margin-inline:auto}
 .news-brand{font:800 clamp(1.9rem,5.3vw,3.5rem)/1.1 var(--serif);letter-spacing:.025em;padding:18px 0 14px;border-bottom:3px double #44433c}
 .news-brand span{font:650 .7rem var(--sans);margin-left:10px;color:var(--mute);white-space:nowrap}
 .news-content{margin:23px auto 55px}
 .news-lead{display:grid;grid-template-columns:1.12fr .88fr;gap:20px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:21px}
+.news-lead.no-photo{grid-template-columns:1fr}
 .news-lead .visual{aspect-ratio:1.65}
 .news h2{font-size:clamp(1.25rem,3.3vw,2.45rem);line-height:1.32;margin:5px 0 8px}
 .news p{font-size:.88rem}
@@ -259,12 +263,39 @@ dialog::backdrop{background:#171a19a8}
 .news-article{padding:17px 0;border-bottom:1px solid var(--line)}
 .news-article h2{font-size:clamp(1.15rem,2.5vw,1.65rem)}
 .news-article .action{margin-top:14px;background:#292a26}
+.news-headline{appearance:none;background:none;border:0;padding:0;text-align:left;font:inherit;color:inherit}
+.news-headline span{color:var(--accent);font-size:.65em;vertical-align:top;white-space:nowrap}
+.news-headline:hover{text-decoration:underline;text-underline-offset:.18em;text-decoration-thickness:1px}
+.news-reader{--bg:#fffdf8;--ink:#272824;--line:#dedbd0;--accent:#942f34;width:min(46rem,calc(100vw - 28px));max-height:min(86dvh,860px)}
+.news-reader::backdrop{background:#1b211f99}
+.reader-header{position:sticky;top:0;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--bg);padding:12px clamp(16px,4vw,38px);border-bottom:3px solid var(--accent)}
+.reader-close{color:var(--accent);background:transparent;border:1px solid var(--line);border-radius:3px;padding:6px 10px;font-size:.8rem;white-space:nowrap}
+.reader-close:hover{border-color:var(--accent)}
+.reader-content{padding:clamp(16px,4vw,38px);font-family:var(--sans)}
+.reader-content h2{font-size:clamp(1.35rem,4.3vw,2.28rem);line-height:1.3;margin:6px 0 16px}
+.reader-content time{color:var(--accent);font-size:.8rem;font-weight:650}
+.reader-lede{font-size:1rem;font-weight:650}
+.reader-content section{margin-top:24px}
+.reader-content h3{font-size:1rem;margin-bottom:4px}
+.reader-content p{line-height:1.85}
+.resale{--bg:#eeebe4;--ink:#262421;--line:#d0c9bc;color:var(--ink);background:var(--bg)}
+.resale-header{border-bottom:1px solid var(--line);padding:19px 0}
+.resale-header .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.resale-main{padding-top:36px;padding-bottom:72px}
+.resale-main h1{font-family:var(--serif);font-size:clamp(1.95rem,5vw,3.25rem);font-weight:400;line-height:1.25}
+.resale-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.resale-grid figure{min-width:0;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.resale-grid figcaption{display:flex;align-items:baseline;justify-content:space-between;gap:5px 12px;flex-wrap:wrap;padding-top:8px}
+.resale-grid strong{font-family:var(--serif);font-weight:400;font-size:1.12rem}
+.resale-grid figcaption span{font-size:.85rem;white-space:nowrap}
+.resale-clear{margin-top:36px;text-align:center;color:#62594c}
 .ending{--bg:#fffefa;--ink:#292923;color:var(--ink);background:var(--bg)}
 .final{min-height:100vh;display:grid;justify-items:center;align-content:center;padding:52px 24px 38px;text-align:center}
 .final .logo{display:block;font-size:1.47rem;margin-bottom:24px}
 .final .visual{width:min(100%,430px)}
 .final h1{font:normal 2.3rem/1 var(--serif);margin:15px 0 4px}
 .final .statement{font-family:var(--serif);line-height:1.9;font-size:clamp(.96rem,2.6vw,1.24rem);margin-top:16px}
+.final .studio-note{max-width:32em;margin-top:17px;color:#514b43;font-size:.92rem}
 .final .clear{margin:26px 0 0;color:#625f58;animation:enter 1s ease both;animation-delay:1s}
 .loss{--bg:#1d2325;--ink:#f4f0e8;--mute:#c4cac8;--line:#5b6466;padding:clamp(27px,7vw,60px);width:min(100%,560px)}
 .loss h2{font:normal clamp(2.3rem,8vw,4.2rem)/1 var(--serif);margin:10px 0 13px}
@@ -312,6 +343,7 @@ dialog::backdrop{background:#171a19a8}
   .news-wrap{width:calc(100% - 28px)}
   .news-lead{grid-template-columns:1fr;gap:12px}
   .news-brand span{display:block;margin:4px 0 0}
+  .resale-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
 }
 @media(max-width:430px){.telegraph-clipping dl{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:365px){.site-head nav{gap:13px}.card-top{flex-wrap:wrap}.business-grid,.branch-grid{grid-template-columns:1fr}.data-table th,.data-table td{padding-inline:8px}.logo{font-size:1.38rem}}
@@ -321,6 +353,7 @@ dialog::backdrop{background:#171a19a8}
 <body>
 <div id="app"></div>
 <dialog id="dialog" aria-labelledby="dialog-title"></dialog>
+<dialog id="article-dialog" aria-labelledby="article-title"></dialog>
 <script>
 /*
   編集ガイド
@@ -334,7 +367,7 @@ dialog::backdrop{background:#171a19a8}
   画像は末尾の images にある data:image/webp;base64,... を置き換えます。
   画像だけを差し替えても、謎の文字・図・時間差の手掛かりはHTMLで表示されます。
   会社情報・社員写真・決算は company、SNS投稿は socialPosts を編集します。
-  通報後の記事と日付は newsArticles、最後の言葉は ENDING を編集します。
+  通報後の記事は newsArticles / truthArticles、再公開の価格は resaleArtworks、最後の言葉は ENDING を編集します。
   ?debug=1 の「仮暗号を検算」で現在のデータを確認できます。
 */
 const CONFIG = {
@@ -623,22 +656,136 @@ const policeQuestions = [
 ];
 
 const MORSE = {A:'.-',B:'-...',C:'-.-.',D:'-..',E:'.',F:'..-.',G:'--.',H:'....',I:'..',J:'.---',K:'-.-',L:'.-..',M:'--',N:'-.',O:'---',P:'.--.',Q:'--.-',R:'.-.',S:'...',T:'-',U:'..-',V:'...-',W:'.--',X:'-..-',Y:'-.--',Z:'--..'};
-const NEWS = {brand:'THE MORNING EDITION', label:'朝刊オンライン', headline:'西港支店で発見の青年を保護'};
+const NEWS = {brand:'THE MORNING EDITION', label:'朝刊オンライン'};
 const newsArticles = [
-  {date:'2026-10-04', label:'速報', title:'「天才少年」と呼ばれた水田ミチルさん、7年ぶりに無事保護', body:'昨夜、通報を受けた捜索班が西港支店の第三保管棟で水田ミチルさん（19）を見つけ、無事に保護した。水田さんは12歳だった2019年12月25日の夜に行方が分からなくなるまで、地元の展覧会などで「天才少年」と呼ばれていた。', image:'port', alt:'第三保管棟の近くにある港と赤い灯台'},
-  {date:'2026-10-06', label:'続報', title:'保護までの7年間、描かされた作品を違法に販売', body:'捜査で押収した台帳には、水田さんが監禁中に描かされた作品をA.P. Asset Managementが委託品と称して販売した記録があった。最後の出品だった《Glass Apple》は、引き渡し前に競売が中止された。'},
-  {date:'2026-10-09', label:'美術', title:'購入者から「描いた本人へ」　作品を自発的に返却', body:'作品を所有していた国内外の資産家や購入者たちが連絡を取り合い、善意で作品を返却した。早い便で届いた箱には、「あなたに返したい」という短い手紙が入っていた。'},
-  {date:'2026-10-12', label:'地域', title:'水田さん、両親と再会', body:'水田さんが両親と対面した。両親は「まずは一緒に食卓を囲めることがうれしい」と、支援者を通じてコメントした。家族からの希望を受け、再会の場は非公開で行われた。'},
-  {date:'2027-02-02', label:'文化', title:'りんごの絵をめぐり、世界各地で企画展示', body:'返された作品が本人の同意のもとで巡回する。素材を変えながら同じ形を描き続けた表現が、海外の美術館や批評誌でも再評価されている。三都市の会場では追加の日程が決まった。'},
-  {date:'2027-09-18', label:'文化', title:'水田ミチルさんに複数の国際美術賞', body:'水田さんがルーメン・パサージュ美術賞、ノースライト国際造形賞など、世界各地の美術賞を受賞した。授賞式には出席せず、アトリエで制作を続けているという。'},
-  {date:'2027-12-08', label:'社会', title:'監禁と違法販売に関与したグループを逮捕', body:'広域捜査班は、監禁と違法販売に関与した犯行グループの構成員を逮捕した。事件から一年余り、複数の取引経路を確認し、逃亡していた人物の身柄も確保した。'},
-  {date:'2028-03-01', label:'文化', title:'水田ミチルさん、自ら新ギャラリーを開設', body:'水田さんが、自作を紹介する小さなウェブギャラリーを立ち上げた。最初に掲載された作品は一枚。本人による短い言葉が添えられている。', final:true}
+  {
+    date:'2026-10-04', label:'速報', title:'「天才少年」と呼ばれた水田ミチルさん、約7年ぶりに保護',
+    body:'捜索班が西港支店の第三保管棟で水田ミチルさん（19）を保護した。通報者は絵に残された複数の手掛かりを解読していた。',
+    image:'port', alt:'第三保管棟の近くにある港と赤い灯台',
+    sections:[
+      {title:'クリスマスの夜に途絶えた足取り', text:'水田さんが姿を消したのは2019年12月25日の夜。当時12歳だった。家の近くの公園で姿を見かけたという記録が残る。翌26日、文化会館は本人に連絡が取れないとして次の展示を延期した。捜査関係者によると、水田さんは公園にいる間に管理会社に出入りする者たちに連れ去られた。'},
+      {title:'窓のない部屋に聞こえた汽笛', text:'通報者は、貝殻を並べた作品の長短を古い電信の対応表で読み、「汽笛」と「港」に行き着いた。赤い灯台のある港と照らし合わせ、広報担当者の投稿に映る納品控え WM-417 を台帳と照合。施設コード AP-07 は西港支店の第三保管棟を指していた。'},
+      {title:'親しい人にしか分からない名前', text:'水田さんは木の年輪に「こうえんでさらわれた」、毛皮の作品に「サキ」という名前を残した。琥珀の写真で浮かんだ「STILL HERE」を窓口に送った通報者に、本人は記憶について三つ質問した。回答を聞いた水田さんは、絵を読んでくれた相手だと判断し、部屋の外に三人の見張りがいると伝えた。'}
+    ]
+  },
+  {
+    date:'2026-10-06', label:'続報', title:'保護までの約7年間、描かされた作品を違法に販売',
+    body:'押収した台帳には、監禁中に描かされた作品を管理会社が委託品と称して出品した記録があった。',
+    sections:[
+      {title:'保管業を名乗り、作品を売っていた', text:'A.P. Asset Management は倉庫で水田さんに制作させ、作品を自社のギャラリーに掲載した。作品の委託を受けたように装い、代金は水田さんに渡らなかった。捜査班は、失踪翌年に美術品関連の売上が増え、会社の営業利益率が約5％から64％に上がった決算にも注目している。'},
+      {title:'《Glass Apple》が出品された日', text:'作品にある数字を「光の記録」に当てはめると、落札の前に助けてほしいという文が現れる。水田さんは落札後に別の場所へ連れて行かれると聞いていた。通報を受け、競売は引き渡し前に中止された。'}
+    ]
+  },
+  {
+    date:'2026-10-09', label:'美術', title:'購入者から「描いた本人へ」　作品を自発的に返却',
+    body:'国内外の富裕層や収集家が、作品を保護された作家のもとへ返し始めた。',
+    sections:[
+      {title:'テレビ出演を見た収集家が申し出', text:'事件後、両親はテレビの取材に応じ、息子の作品を本人のもとへ戻したいと訴えた。放送を見た購入者から返却の申し出が相次いだ。早い便で届いた箱には「あなたに返したい」とだけ書かれた手紙が入っていた。'},
+      {title:'返却の窓口は両親側に', text:'両親が指定した窓口が作品の受け取りと返却書類を管理した。収集家の一人は「返した絵は、本人が今後どうするか自由に決めてほしい」と話した。'}
+    ]
+  },
+  {
+    date:'2026-10-12', label:'地域', title:'水田さん、両親と再会',
+    body:'両親は「まずは一緒に食卓を囲めることがうれしい」とコメントした。',
+    sections:[
+      {title:'面会の様子は非公開', text:'保護後、水田さんは支援者の立ち会いのもとで両親と面会した。家族側の希望で、面会の詳しい様子は公表されていない。公開されたコメントは両親から寄せられたもので、水田さん本人への取材は行われなかった。'}
+    ]
+  },
+  {
+    date:'2027-02-02', label:'文化', title:'りんごの絵をめぐり、世界各地で企画展示',
+    body:'返却された作品が巡回展示され、海外の美術館や批評誌でも再評価されている。',
+    sections:[
+      {title:'同じ形を、異なる素材で描き続けた', text:'ガラス、木、貝殻。同じりんごを扱いながら、作品の表面には、作家が伝えたいことが刻まれていた。会場では素材の違いに加え、作品と言葉の関係が取り上げられた。三都市で会期が延長された。'}
+    ]
+  },
+  {
+    date:'2027-09-18', label:'文化', title:'水田ミチルさんに複数の国際美術賞',
+    body:'水田さんがルーメン・パサージュ美術賞とノースライト国際造形賞などを受賞した。',
+    sections:[
+      {title:'式典には家族が代理出席', text:'審査員は、素材を変えながらひとつの形を長く描く姿勢を評価した。水田さんは式典に出席せず、家族が代理で賞状を受け取った。家族側は「本人はアトリエで制作を続けている」と説明した。'}
+    ]
+  },
+  {
+    date:'2027-12-08', label:'社会', title:'監禁と違法販売に関与したグループを逮捕',
+    body:'捜査班が拘束後も調べを続け、組織幹部を含む関係者を逮捕した。',
+    sections:[
+      {title:'組織の関係先から販売資料', text:'保護当夜に現場の見張りが拘束された後、捜査班は取引記録から組織幹部と販売に関わった人物を割り出した。管理会社の委託品台帳と、実際に代金を受け取った人物の記録には食い違いがあった。'}
+    ]
+  },
+  {
+    date:'2028-03-01', label:'文化', title:'水田ミチルさん名義の公式ギャラリーが公開',
+    body:'返却された作品と新作が公開された。家族側は、これからも作品の発表を支えていくと説明している。',
+    sections:[
+      {title:'返却された作品を再び掲載', text:'サイトでは、かつての管理会社が扱った作品を含む複数の絵が販売されている。価格は事件前を上回る。作品の問い合わせには、旧ギャラリーから引き継いだチャット窓口を使う。'}
+    ],
+    final:true
+  }
+];
+
+const resaleArtworks = [
+  {image:'red', title:'Apple', price:12800000},
+  {image:'glass', title:'Glass Apple', price:18500000},
+  {image:'wood', title:'Wood Apple', price:14500000},
+  {image:'shell', title:'Shell Apple', price:15600000},
+  {image:'amber', title:'Amber Apple', price:17200000}
+];
+
+const followupQuestions = [
+  {
+    prompt:'指令室です。何が起きていますか。',
+    choices:['水田ミチルが再び監禁されています','水田ミチルの作品がなくなりました','ギャラリーの販売価格が気になります'],
+    answer:'水田ミチルが再び監禁されています',
+    retry:'今、本人の身に何が起きているか教えてください。'
+  },
+  {
+    prompt:'水田さんをいま閉じ込めている犯人は、誰だと思いますか。',
+    choices:['管理会社','サキ','水田ミチルの親'],
+    answer:'水田ミチルの親',
+    retry:'最近、本人を引き取り、作品の受け取りとギャラリーを取り仕切っていたのは誰でしょうか。'
+  }
+];
+
+const truthArticles = [
+  {
+    date:'2028-03-02', label:'再捜査', title:'水田ミチルさんを再び保護　両親を監禁の疑いで逮捕',
+    body:'新しい公式ギャラリーに残されたチャットに本人が応じ、通報者が二度目の通報を行った。',
+    sections:[
+      {title:'同じ言葉が、二度目の通報につながった', text:'家族が立ち上げたサイトには、旧ギャラリーと同じチャット窓口が残っていた。通報者が琥珀の作品で見た英字を送ると、水田さんから、引き取られた先で外出を止められ、制作部屋に閉じ込められていると返事があった。駆け付けた捜査員が水田さんを保護した。'},
+      {title:'警察は失踪前の生活も調査', text:'捜査員は保護と並行して、学校や周囲の大人に当時の様子を聞き取った。水田さんが抜きん出た才能ゆえにからかわれ、学校になじめなかったこと、両親が「手がかかる」と言って世話をせず、育児放棄を続けていたことが分かった。'}
+    ]
+  },
+  {
+    date:'2028-03-05', label:'検証', title:'「公園で待っていて」　最初の誘拐を計画したのは両親だった',
+    body:'押収したやり取りと金銭の記録から、両親が連れ去りの前から組織と連絡を取っていたことが明らかになった。',
+    sections:[
+      {title:'クリスマスの夜、なぜ公園にいたのか', text:'2019年12月25日、両親は水田さんに「後で迎えに行くから公園で待っていて」と伝えた。その夜、現れたのは組織の者だった。捜査班は、両親の連絡記録と組織側の証言が一致したとしている。'},
+      {title:'借金返済のために、息子の作品を売る', text:'両親にはギャンブルで作った借金があった。借金返済の金を求める中で、麻薬の売買に関与する組織のボスと知り合った。両親は水田さんを連れ去らせ、描かせた絵を闇オークションで売る計画を持ち掛けた。最初の保護までに、売上の一部が両親に渡っていたことが送金記録から確認された。'}
+    ]
+  },
+  {
+    date:'2028-03-12', label:'特集', title:'作品が売れるほど取り分を欲した両親　組織を切り捨て、絵の再販売を計画',
+    body:'両親は救出と組織の摘発を見越し、返却された作品を自分たちで販売する準備を進めていた。',
+    sections:[
+      {title:'絵とSNSに残った救難の合図に気付く', text:'作品の価格が上がるにつれ、両親は分配をやめて売上を独占したいと考えるようになった。水田さんの作品と管理会社の社員のSNSを突き合わせ、彼がギャラリーを通じて外に助けを求めていると気付いた。誰かが読み解き警察に連絡すれば、組織を切り捨てられると見込んでいた。'},
+      {title:'テレビ出演と善意の返却を取り込む', text:'両親のメモには、組織の摘発後、被害者家族としてテレビに出演し、購入者だった富裕層に返却を呼び掛け、自分たちのサイトで絵をもう一度売る段取りが残っていた。作品を返した人たちの多くは、作品が作家自身の手元に戻ると考えていた。'},
+      {title:'高額な価格と空白の作品ページ', text:'再公開された公式ギャラリーの運営と価格設定は両親が行った。事件前より高い値段がつけられ、作品に添えられていた本人の解説はすべて外された。両親側が「本人は制作を続けている」と説明する一方で、水田さんは自由に外に出られなかった。'}
+    ]
+  },
+  {
+    date:'2029-04-20', label:'文化', title:'水田ミチルさん、自分の絵を並べる小さなサイトを公開',
+    body:'保護から一年余り。本人の言葉と、いま描いているりんごが並ぶ。',
+    sections:[
+      {title:'朝、描きたくなったので描いた', text:'水田さんが新しいサイトに最初に載せたのは、朝の光で描いた赤いりんごだった。制作のペースも発表する絵も、本人が決めている。添えられた短い文章は、絵を描く時間についてのものだった。'}
+    ],
+    final:true
+  }
 ];
 
 const ENDING = {
   title: 'Apple',
   image: 'red',
-  statement: '君が僕を救ってくれてありがとう。僕は自由にりんごを描くことが出来る。'
+  statement: '君が僕を救ってくれてありがとう。僕は自由にりんごを描くことが出来る。',
+  note: '今朝、台所にりんごが一つありました。窓から光が入ってきて、描きたくなったので描きました。'
 };
 
 // 作品、社員、記事に使う埋め込み画像。
@@ -674,6 +821,7 @@ const images = {
 
 const app = document.querySelector('#app');
 const dialog = document.querySelector('#dialog');
+const articleDialog = document.querySelector('#article-dialog');
 const yen = new Intl.NumberFormat('ja-JP', {style:'currency', currency:'JPY'});
 const $ = (selector, within = document) => within.querySelector(selector);
 const artById = id => artworks.find(art => art.id === id);
@@ -701,11 +849,19 @@ const state = {
   seq: 0,
   callStartedAt: 0,
   callEndedAt: 0,
+  callPausedAt: 0,
+  newsEdition: 'initial',
+  followup: {
+    revealed: false,
+    log: [{kind:'guest',text:'作品についてのお問い合わせを承ります。'}],
+    call: null
+  },
   auctionStoppedAt: null,
   lossReason: '',
   debugOutput: ''
 };
 let amberTimer;
+let followupReviewTimer;
 let returnFocus = null;
 
 function auctionState() {
@@ -727,7 +883,10 @@ function refreshAuction() {
   for (const node of document.querySelectorAll('[data-auction-price]')) node.textContent = yen.format(price);
   const callClock = $('[data-call-clock]', dialog);
   if (callClock) {
-    const elapsed = (state.callEndedAt || Date.now()) - state.callStartedAt;
+    const followupCall = state.modal === 'followup-report' ? state.followup.call : null;
+    const start = followupCall ? followupCall.startedAt : state.callStartedAt;
+    const end = followupCall ? followupCall.endedAt : state.callEndedAt;
+    const elapsed = (end || Date.now()) - start;
     callClock.textContent = clock(Math.floor(elapsed / 1000) * 1000);
   }
   if (state.phase === 'playing' && remaining <= 0) finishLoss('time');
@@ -744,7 +903,6 @@ function routePath(site, page, art = null) {
 
 function parseRoute(path) {
   const [site,page,id] = (path || '').replace(/^#\//,'').split('/');
-  if (site === 'ending' && state.phase === 'clear') return {site,page:'apple',art:null};
   const allowed = site === 'gallery' && ['home','privacy'].includes(page)
     || Object.hasOwn(navItems, site) && navItems[site].some(item => item[0] === page);
   if (!allowed) return {site:'gallery',page:'home',art:null};
@@ -792,21 +950,18 @@ function applyRoute(target, y = 0) {
 }
 
 function onHistory() {
-  if (state.phase === 'resolved') {
-    openNews();
-    return;
-  }
-  if (state.phase === 'clear') {
-    closeDialog(false);
-    if (location.hash !== routePath('ending','apple')) {
-      openNews();
-    } else {
-      renderPage();
-      window.scrollTo(0,0);
+  if (state.phase === 'loss') return;
+  if (state.phase !== 'playing') {
+    const [,view] = location.hash.replace(/^#\//,'').split('/');
+    if (state.modal === 'followup-report' && state.phase === 'reopened') {
+      pauseFollowupCall();
     }
+    if (view === 'studio' && state.phase === 'clear') showEndingPage('studio');
+    else if (view === 'truth' && ['truth-resolved','clear'].includes(state.phase)) openNews('truth');
+    else if (view === 'apple' && state.phase !== 'resolved') showEndingPage('apple');
+    else openNews();
     return;
   }
-  if (state.phase !== 'playing') return;
   if (state.modal === 'report') {
     const path = routePath(state.route.site,state.route.page,state.route.art);
     if (location.hash !== path) history.pushState({path,y:window.scrollY},'',path);
@@ -1089,25 +1244,51 @@ function socialPage() {
     </section></main>`;
 }
 
+function chatLauncher() {
+  const icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8"/></svg>';
+  return `<button type="button" class="chat-launch" data-action="chat" aria-haspopup="dialog">${icon}チャット</button>`;
+}
+
+function renderResaleGallery() {
+  document.body.className = 'resale';
+  document.title = CONFIG.artistName + ' 公式ギャラリー';
+  app.innerHTML = `<header class="resale-header"><div class="wrap">
+    <span class="logo">Michiru Mizuta</span>
+    <span class="eyebrow">Official Gallery</span>
+  </div></header>
+  <main id="content" class="resale-main wrap">
+    <div class="section-head"><h1>${e(CONFIG.artistName)}</h1><span class="eyebrow">作品一覧</span></div>
+    <div class="resale-grid">${resaleArtworks.map(work=>`<figure>
+      ${visual(work.image,work.title,{className:'photo',lazy:true})}
+      <figcaption><strong>${e(work.title)}</strong><span class="mono">${yen.format(work.price)}</span></figcaption>
+    </figure>`).join('')}</div>
+    <p class="resale-clear eyebrow">GAME CLEAR</p>
+  </main>${chatLauncher()}`;
+}
+
 function renderPage() {
   const {site,page} = state.route;
   document.body.className = site;
+  if (site === 'ending' && page === 'apple') {
+    renderResaleGallery();
+    return;
+  }
   if (site === 'ending') {
     app.innerHTML = `<main class="final" id="content">
       <div class="logo">${e(CONFIG.title)}</div>
       ${visual(ENDING.image,'白い画布に描かれた、普通の赤いりんご一個',{colors:['#f2e9db','#ad3029']})}
       <h1>${e(ENDING.title)}</h1>
       <p class="eyebrow muted">${e(CONFIG.artistName)}</p>
+      <p class="studio-note">${e(ENDING.note)}</p>
       <p class="statement">「${e(ENDING.statement)}」</p>
-      <p class="clear eyebrow">Game Clear / Thank you for playing.</p></main>`;
+      <p class="clear eyebrow">TRUE END / Thank you for playing.</p></main>`;
     document.title = CONFIG.title + ' — ' + ENDING.title;
     return;
   }
   document.title = ({gallery:CONFIG.title + ' — 水田ミチル',company:company.name,social:'田中ユウキ / Fieldnote'})[site];
   const pageView = site === 'gallery' ? galleryPage(page) : site === 'company' ? companyPage(page) : socialPage();
-  const chatIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8"/></svg>';
   app.innerHTML = header(site) + pageView + footer(site)
-    + `<button type="button" class="chat-launch" data-action="chat" aria-haspopup="dialog">${chatIcon}チャット</button>`
+    + chatLauncher()
     + (CONFIG.debug ? debugPanel() : '');
   refreshAuction();
 }
@@ -1135,10 +1316,14 @@ function closeDialog(restoreFocus = true) {
   if (restoreFocus && anchor?.isConnected) anchor.focus({preventScroll:true});
 }
 
-function modalHead(title, label = '', close = true) {
+function hangupButton() {
+  return '<button type="button" class="hangup" data-action="hangup">通話を切る</button>';
+}
+
+function modalHead(title, label = '', controls = '<button type="button" class="close" data-action="close" aria-label="閉じる">×</button>') {
   return `<div class="modal-head"><div id="dialog-title" class="terminal-head">
     ${label ? `<span class="eyebrow">${e(label)}</span>` : ''}<strong>${e(title)}</strong></div>
-    ${close ? '<button type="button" class="close" data-action="close" aria-label="閉じる">×</button>' : ''}</div>`;
+    ${controls}</div>`;
 }
 
 function woodAxisY(puzzle,x) {
@@ -1340,12 +1525,13 @@ function choiceButtons(choices, forVerification = false) {
 function focusTerminal() {
   const log = $('.chat-flow',dialog);
   if (log) log.scrollTop = log.scrollHeight;
-  const control = $('#terminal-input',dialog) ?? $('[data-choice-list]',dialog);
+  const control = $('#terminal-input',dialog) ?? $('[data-choice-list]',dialog) ?? $('[data-action="report"]',dialog);
   control?.focus({preventScroll:true});
 }
 
 function openChat() {
-  if (withinTime()) renderChat();
+  if (state.route.site === 'ending' && state.route.page === 'apple') renderFollowupChat();
+  else if (withinTime()) renderChat();
 }
 
 function renderChat() {
@@ -1357,11 +1543,13 @@ function renderChat() {
   } else if (stage === 'verification') {
     entry = choiceButtons(verificationQuestions[state.chatStep].choices,true);
   } else if (stage === 'sos') {
-    entry = state.sosLinesShown === SOS.length ? '<button type="button" data-action="report">警察に通報する</button>' : '<p class="choice-label">受信中…</p>';
+    const reportLabel = state.callPausedAt ? '警察への通話を再開する' : '警察に通報する';
+    entry = state.sosLinesShown === SOS.length
+      ? `<button type="button" data-action="report">${reportLabel}</button>` : '<p class="choice-label">受信中…</p>';
   } else {
     entry = '<p class="choice-label">通信切断</p>'+(CONFIG.failOnChatWrongAnswer ? '<button type="button" data-action="restart">最初から遊ぶ</button>' : '<button type="button" data-action="retry-chat">窓口に再接続する</button>');
   }
-  showDialog('chat','terminal'+(normal?' public':''),`${modalHead(normal?'ギャラリー窓口':'通信端末',normal?'Gallery Desk':'Private Connection')}
+  showDialog('chat','terminal'+(normal?' public':''),`${modalHead(normal?'ギャラリー窓口':'通信端末',normal?'Gallery Desk':'Private Connection',normal?undefined:hangupButton())}
     ${logMarkup(state.chatLog,'チャット履歴')}
     <div class="entry">${entry}${CONFIG.debug ? debugInner('chat') : ''}</div>`);
   focusTerminal();
@@ -1428,14 +1616,33 @@ function retryChat() {
 
 function startCall() {
   if (!withinTime() || state.chatStage !== 'sos' || state.sosLinesShown < SOS.length) return;
-  state.callStep = 0;
-  state.callStartedAt = Date.now();
-  state.callEndedAt = 0;
-  state.callLog = [
-    {kind:'system',text:'架空の指令室に接続しました。回答は慎重に。誤りがあると通信が切断されます。'},
-    {kind:'guest',text:policeQuestions[0].prompt}
-  ];
+  if (state.callPausedAt) {
+    state.callStartedAt += Date.now() - state.callPausedAt;
+    state.callPausedAt = 0;
+    addMessage(state.callLog,'system','前の通報の続きから再接続しました。');
+  } else {
+    state.callStep = 0;
+    state.callStartedAt = Date.now();
+    state.callEndedAt = 0;
+    state.callLog = [
+      {kind:'system',text:'架空の指令室に接続しました。回答は慎重に。誤りがあると通信が切断されます。'},
+      {kind:'guest',text:policeQuestions[0].prompt}
+    ];
+  }
   renderCall('calling');
+}
+
+function showReport(kind, status, log, entry, debug = '') {
+  const callStatus = {calling:'指令室 — 通話中', disconnected:'指令室 — 通信切断', dispatch:'指令室 — 通話終了'}[status];
+  showDialog(kind,'terminal',`<div class="modal-head">
+    <div id="dialog-title" class="terminal-head"><span class="eyebrow">ゲーム内の架空通報</span><strong>${callStatus}</strong></div>
+    <div class="call-controls">
+      <div class="phone-indicator"><span class="sr">通話時間</span><span class="mono call-time" data-call-clock>00:00</span></div>
+      ${status==='calling' ? hangupButton() : ''}
+    </div></div>
+    ${logMarkup(log,'通報履歴')}
+    <div class="entry">${entry}${debug}</div>`);
+  focusTerminal();
 }
 
 function renderCall(status) {
@@ -1446,13 +1653,7 @@ function renderCall(status) {
   } else if (status === 'calling') {
     entry = inputForm('report',question.placeholder);
   }
-  const callStatus = {calling:'指令室 — 通話中', disconnected:'指令室 — 通信切断', dispatch:'指令室 — 通話終了'}[status];
-  showDialog('report','terminal',`<div class="modal-head">
-    <div id="dialog-title" class="terminal-head"><span class="eyebrow">ゲーム内の架空通報</span><strong>${callStatus}</strong></div>
-    <div class="phone-indicator"><span class="sr">通話時間</span><span class="mono call-time" data-call-clock>00:00</span></div></div>
-    ${logMarkup(state.callLog,'通報履歴')}
-    <div class="entry">${entry}${status==='calling'&&CONFIG.debug ? debugInner('report') : ''}</div>`);
-  focusTerminal();
+  showReport('report',status,state.callLog,entry,status==='calling'&&CONFIG.debug ? debugInner('report') : '');
 }
 
 function submitCall(value, display = value) {
@@ -1483,7 +1684,7 @@ function submitCall(value, display = value) {
     addMessage(state.callLog,'guest','情報を受理しました。捜索班を西港支店へ向かわせます。ご協力ありがとうございました。');
     renderCall('dispatch');
     setTimeout(()=>{
-      if (state.phase === 'resolved') openNews();
+      if (state.phase === 'resolved') openNews('initial',true);
     },850);
   } else {
     addMessage(state.callLog,'guest',policeQuestions[state.callStep].prompt);
@@ -1491,43 +1692,214 @@ function submitCall(value, display = value) {
   }
 }
 
+function renderFollowupChat() {
+  const revealed = state.followup.revealed;
+  const completed = ['truth-resolved','clear'].includes(state.phase);
+  let entry = inputForm('followup-chat','メッセージを入力');
+  if (revealed) {
+    const text = state.followup.call?.pausedAt ? '緊急通報を再開する' : '緊急通報する';
+    entry = completed ? '<button type="button" data-action="truth-news">再捜査の報道を見る</button>'
+      : `<button type="button" data-action="report">${text}</button>`;
+  }
+  showDialog('followup-chat',revealed?'terminal':'terminal public',`
+    ${modalHead(revealed?'水田ミチル':'公式ギャラリー窓口',revealed?'Private Connection':'Gallery Desk',hangupButton())}
+    ${logMarkup(state.followup.log,'チャット履歴')}<div class="entry">${entry}</div>`);
+  focusTerminal();
+}
+
+function sendFollowupChat(value) {
+  if (state.phase !== 'reopened' || state.modal !== 'followup-chat' || state.followup.revealed) return;
+  addMessage(state.followup.log,'mine',value);
+  if (normalizePhrase(value) === normalizePhrase(CONFIG.secretChatPhrase)) {
+    state.followup.revealed = true;
+    addMessage(state.followup.log,'guest','……また来てくれたんですね。ミチルです。今度は親に閉じ込められています。');
+    addMessage(state.followup.log,'guest','テレビでは、これで家に帰れるって言っていました。そのあと、親はぼくをこの部屋から出してくれなくなりました。');
+    addMessage(state.followup.log,'guest','ぼくの名前で出ているサイトも、絵の値段も、親が決めました。チャットだけ、前のギャラリーと同じです。もう一度、警察に伝えてもらえませんか。');
+  } else {
+    addMessage(state.followup.log,'guest','お問い合わせを受け付けました。返信までお時間をいただく場合があります。');
+  }
+  renderFollowupChat();
+}
+
+function startFollowupCall() {
+  if (state.phase !== 'reopened' || state.modal !== 'followup-chat' || !state.followup.revealed) return;
+  const previous = state.followup.call;
+  if (previous?.pausedAt) {
+    previous.startedAt += Date.now() - previous.pausedAt;
+    previous.pausedAt = 0;
+    addMessage(previous.log,'system','緊急通報の続きから再接続しました。');
+  } else {
+    state.followup.call = {
+      step:'incident', reviewIndex:0, startedAt:Date.now(), pausedAt:0, endedAt:0,
+      log:[{kind:'guest',text:followupQuestions[0].prompt}]
+    };
+  }
+  renderFollowupCall();
+  if (state.followup.call.step === 'review') playFollowupReview();
+}
+
+function renderFollowupCall() {
+  const call = state.followup.call;
+  const status = call.endedAt ? 'dispatch' : 'calling';
+  let entry = '<p class="choice-label">通話終了</p>';
+  if (!call.endedAt) {
+    entry = call.step === 'review' ? '<p class="choice-label">指令室が確認しています…</p>'
+      : choiceButtons(followupQuestions[call.step === 'incident' ? 0 : 1].choices);
+  }
+  showReport('followup-report',status,call.log,entry);
+}
+
+function playFollowupReview() {
+  const call = state.followup.call;
+  const lines = [
+    {kind:'mine', text:'保護される前から、家庭で虐待や育児放棄を受けていたのではないでしょうか。12歳の子がクリスマスの夜に一人で公園にいた経緯も調べてほしいです。'},
+    {kind:'guest', text:'失踪当夜の経緯は、前の通報記録に追記します。当時の家庭での生活も確認します。'},
+    {kind:'guest', text:followupQuestions[1].prompt}
+  ];
+  clearTimeout(followupReviewTimer);
+  followupReviewTimer = setTimeout(()=>{
+    if (call !== state.followup.call || call.pausedAt || state.modal !== 'followup-report' || call.step !== 'review') return;
+    const line = lines[call.reviewIndex++];
+    addMessage(call.log,line.kind,line.text);
+    if (call.reviewIndex === lines.length) call.step = 'suspect';
+    renderFollowupCall();
+    if (call.step === 'review') playFollowupReview();
+  },850);
+}
+
+function answerFollowupCall(index) {
+  const call = state.followup.call;
+  if (state.phase !== 'reopened' || state.modal !== 'followup-report' || !call || call.endedAt || call.step === 'review') return;
+  const question = followupQuestions[call.step === 'incident' ? 0 : 1];
+  const choice = question.choices[index];
+  if (!choice) return;
+  addMessage(call.log,'mine',choice);
+  if (choice !== question.answer) {
+    addMessage(call.log,'guest',question.retry);
+    renderFollowupCall();
+    return;
+  }
+  if (call.step === 'incident') {
+    call.step = 'review';
+    renderFollowupCall();
+    playFollowupReview();
+    return;
+  }
+  addMessage(call.log,'guest','受理しました。水田さんの安全を最優先に、捜査員を向かわせます。');
+  call.endedAt = Date.now();
+  state.phase = 'truth-resolved';
+  renderFollowupCall();
+  setTimeout(()=>{
+    if (state.phase === 'truth-resolved') openNews('truth',true);
+  },850);
+}
+
+function pauseFollowupCall() {
+  clearTimeout(followupReviewTimer);
+  state.followup.call.pausedAt = Date.now();
+}
+
+function hangUp() {
+  if (state.modal === 'report' && state.phase === 'playing' && !state.callEndedAt) {
+    state.callPausedAt = Date.now();
+    renderChat();
+  } else if (state.modal === 'followup-report' && state.phase === 'reopened') {
+    pauseFollowupCall();
+    renderFollowupChat();
+  } else if (['chat','followup-chat'].includes(state.modal)) {
+    closeDialog();
+  }
+}
+
 function articleDate(article) {
   return `<time datetime="${e(article.date)}">${e(article.date.replaceAll('-','.'))}</time> <span class="eyebrow muted">${e(article.label)}</span>`;
 }
 
-function openNews() {
-  const [lead,...updates] = newsArticles;
-  showDialog('news','news',`
+function currentNews() {
+  return state.newsEdition === 'truth' ? truthArticles : newsArticles;
+}
+
+function pushEndingHistory(view) {
+  const path = routePath('ending',view);
+  if (location.hash !== path) history.pushState({path,y:0},'',path);
+}
+
+function openNews(edition = 'initial', record = false) {
+  closeNewsArticle();
+  state.newsEdition = edition;
+  const truth = edition === 'truth';
+  if (record) pushEndingHistory(truth?'truth':'news');
+  const [lead,...updates] = currentNews();
+  const headline = (article,index)=>`<h2><button type="button" class="news-headline" data-article="${index}">${e(article.title)} <span aria-hidden="true">↗</span></button></h2>`;
+  showDialog('news',truth?'news truth-news':'news',`
     <header>
-      <div class="news-bar"><div class="news-wrap">社会 / 特集</div></div>
+      <div class="news-bar"><div class="news-wrap">${truth ? '社会 / 再捜査' : '社会 / 特集'}</div></div>
       <div class="news-wrap"><div class="news-brand" id="dialog-title">${e(NEWS.brand)} <span>${e(NEWS.label)}</span></div></div>
     </header>
     <main class="news-wrap news-content">
-      <article class="news-lead">
-        <div>${articleDate(lead)}<h2>${e(lead.title)}</h2><p>${e(lead.body)}</p></div>
-        ${visual(lead.image,lead.alt,{className:'photo'})}
+      <article class="news-lead${lead.image?'':' no-photo'}">
+        <div>${articleDate(lead)}${headline(lead,0)}<p>${e(lead.body)}</p></div>
+        ${lead.image ? visual(lead.image,lead.alt,{className:'photo'}) : ''}
       </article>
-      <ol class="news-updates">${updates.map(article=>`<li><article class="news-article">
-        ${articleDate(article)}<h2>${e(article.title)}</h2><p>${e(article.body)}</p>
-        ${article.final ? '<a class="action" href="#/ending/apple" data-action="ending">水田ミチルの新しい公式ギャラリーを見る →</a>' : ''}
+      <ol class="news-updates">${updates.map((article,index)=>`<li><article class="news-article">
+        ${articleDate(article)}${headline(article,index+1)}<p>${e(article.body)}</p>
+        ${article.final ? truth
+          ? '<a class="action" href="#/ending/studio" data-action="true-ending">ミチルの新しいアトリエを訪ねる →</a>'
+          : '<a class="action" href="#/ending/apple" data-action="ending">水田ミチルの新しい公式ギャラリーを見る →</a>' : ''}
       </article></li>`).join('')}</ol>
     </main>`);
   if (!dialog.hasAttribute('tabindex')) dialog.tabIndex = -1;
   dialog.focus({preventScroll:true});
 }
 
-function finishGame() {
-  if (!['resolved','clear'].includes(state.phase) || state.modal !== 'news') return;
-  state.phase = 'clear';
+function openNewsArticle(index) {
+  if (state.modal !== 'news') return;
+  const article = currentNews()[index];
+  if (!article) return;
+  const truth = state.newsEdition === 'truth';
+  articleDialog.className = truth ? 'news-reader truth-news' : 'news-reader';
+  articleDialog.innerHTML = `<header class="reader-header">
+    <span class="eyebrow">${e(NEWS.brand)}</span>
+    <button type="button" class="reader-close" data-action="close-article" autofocus>閉じる <span aria-hidden="true">×</span></button>
+  </header>
+  <article class="reader-content">
+    ${articleDate(article)}
+    <h2 id="article-title">${e(article.title)}</h2>
+    <p class="reader-lede">${e(article.body)}</p>
+    ${article.sections.map(section=>`<section><h3>${e(section.title)}</h3><p>${e(section.text)}</p></section>`).join('')}
+  </article>`;
+  if (!articleDialog.open) articleDialog.showModal();
+  articleDialog.scrollTop = 0;
+}
+
+function closeNewsArticle() {
+  if (articleDialog.open) articleDialog.close();
+}
+
+function showEndingPage(page, record = false) {
+  closeNewsArticle();
   closeDialog(false);
-  state.route = {site:'ending',page:'apple',art:null};
-  const path = routePath('ending','apple');
-  if (location.hash !== path) history.pushState({path,y:0},'',path);
+  state.route = {site:'ending',page,art:null};
+  if (record) pushEndingHistory(page);
   renderPage();
   window.scrollTo(0,0);
   const heading = $('#content h1');
-  heading.tabIndex = -1;
-  heading.focus({preventScroll:true});
+  if (heading) {
+    heading.tabIndex = -1;
+    heading.focus({preventScroll:true});
+  }
+}
+
+function finishGame() {
+  if (state.modal !== 'news' || state.newsEdition !== 'initial') return;
+  if (state.phase === 'resolved') state.phase = 'reopened';
+  showEndingPage('apple',true);
+}
+
+function finishTrueGame() {
+  if (state.modal !== 'news' || state.newsEdition !== 'truth') return;
+  state.phase = 'clear';
+  showEndingPage('studio',true);
 }
 
 function finishLoss(reason) {
@@ -1546,7 +1918,11 @@ function finishLoss(reason) {
 }
 
 function closeActiveModal() {
-  if (['report','news','loss'].includes(state.modal)) return;
+  if (['chat','report','followup-chat','followup-report'].includes(state.modal)) {
+    hangUp();
+    return;
+  }
+  if (['news','loss'].includes(state.modal)) return;
   if (state.modal === 'art') {
     if (history.state?.artBack) {
       history.back();
@@ -1605,7 +1981,12 @@ function debugAction(action) {
       startCall();
       break;
     case 'pass':
-      if (state.modal === 'report') submitCall(policeQuestions[state.callStep].accepted[0]);
+      if (state.modal === 'report') {
+        const question = policeQuestions[state.callStep];
+        const answer = question.accepted[0];
+        const choice = question.choices?.find(item=>(item.value ?? item) === answer);
+        submitCall(answer,choice?.label ?? answer);
+      }
       else if (state.modal === 'chat' && state.chatStage === 'verification') {
         const question = verificationQuestions[state.chatStep];
         answerVerification(question.choices.indexOf(question.answer));
@@ -1634,7 +2015,7 @@ document.addEventListener('error',event=>{
 },true);
 
 document.addEventListener('click',event=>{
-  const target = event.target.closest('[data-route],[data-action],[data-adjacent],[data-choice],[data-suggestion],[data-debug]');
+  const target = event.target.closest('[data-route],[data-action],[data-adjacent],[data-choice],[data-suggestion],[data-article],[data-debug]');
   if (!target) return;
   if (target.matches('a') && (event.ctrlKey || event.shiftKey || event.metaKey || event.altKey)) return;
   event.preventDefault();
@@ -1645,21 +2026,31 @@ document.addEventListener('click',event=>{
   } else if (target.dataset.choice !== undefined) {
     const index = Number(target.dataset.choice);
     if (state.modal === 'chat') answerVerification(index);
+    else if (state.modal === 'followup-report') answerFollowupCall(index);
     else if (state.modal === 'report') {
       const choice = policeQuestions[state.callStep]?.choices?.[index];
       if (choice) submitCall(choice.value ?? choice, choice.label ?? choice);
     }
   } else if (target.dataset.suggestion !== undefined) {
     sendChat(publicQuestions[Number(target.dataset.suggestion)][0]);
+  } else if (target.dataset.article !== undefined) {
+    openNewsArticle(Number(target.dataset.article));
   } else if (target.dataset.debug) {
     debugAction(target.dataset.debug);
   } else {
     switch (target.dataset.action) {
       case 'chat': openChat(); break;
       case 'close': closeActiveModal(); break;
+      case 'hangup': hangUp(); break;
+      case 'close-article': closeNewsArticle(); break;
       case 'retry-chat': retryChat(); break;
-      case 'report': startCall(); break;
+      case 'report':
+        if (state.modal === 'followup-chat') startFollowupCall();
+        else startCall();
+        break;
       case 'ending': finishGame(); break;
+      case 'truth-news': openNews('truth',true); break;
+      case 'true-ending': finishTrueGame(); break;
       case 'restart': location.reload(); break;
       case 'collection':
         $('#collection').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
@@ -1676,6 +2067,7 @@ function submitTerminal(form) {
     return;
   }
   if (form.dataset.form === 'chat') sendChat(answer);
+  else if (form.dataset.form === 'followup-chat') sendFollowupChat(answer);
   else if (form.dataset.form === 'report') submitCall(answer);
 }
 
