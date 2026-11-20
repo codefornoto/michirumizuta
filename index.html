@@ -33,6 +33,9 @@ ul,ol{padding-inline-start:1.4em}
 .site-head nav{display:flex;gap:clamp(16px,2.6vw,43px);align-items:center}
 .site-head nav a{font-size:.81rem;text-decoration:none;color:var(--mute);white-space:nowrap;padding:.25em 0}
 .site-head nav a:hover,.site-head nav a[aria-current="page"]{color:var(--ink);text-decoration:underline}
+.head-actions{display:flex;gap:clamp(10px,2vw,26px);align-items:center;flex:none}
+.buyer-nav{font-size:.75rem;white-space:nowrap;background:transparent;border:1px solid var(--line);padding:6px 10px}
+.buyer-nav:hover{border-color:var(--ink)}
 .auction-link{font-size:.7rem;letter-spacing:.08em;display:flex;align-items:center;gap:10px;white-space:nowrap;text-decoration:none}
 .live-dot{display:inline-block;width:7px;height:7px;flex:0 0 7px;border-radius:50%;background:#a84f3d;box-shadow:0 0 0 3px #a84f3d1e}
 .mono{font-variant-numeric:tabular-nums}
@@ -86,12 +89,12 @@ ul,ol{padding-inline-start:1.4em}
 .prose h2{font-size:1.12rem;margin-top:2.2em}
 .profile-grid,.editorial-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,7vw,104px);margin-top:34px}
 .timeline{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
-.timeline li{padding:13px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:100px 1fr;gap:10px}
+.timeline li{border-bottom:1px solid var(--line)}
+.timeline li button{display:grid;grid-template-columns:90px minmax(0,1fr) auto;gap:10px;width:100%;padding:13px 1px;border:0;background:none;text-align:left;line-height:1.55}
+.timeline li button:hover span:nth-child(2){text-decoration:underline;text-underline-offset:.2em}
 .timeline small{color:var(--mute)}
-.timeline .gap{display:block;text-align:center;color:var(--mute);letter-spacing:.32em}
-.artist-archive{margin-top:21px;padding:11px 14px;border-left:2px solid #b0a392;background:#eeebe2;font-size:.84rem}
-.artist-archive time,.artist-archive small{display:block;color:var(--mute);font-size:.72rem}
-.prose .artist-archive p{margin:.25em 0 .4em}
+.timeline-open{color:var(--mute);padding-inline:3px}
+.timeline .gap{display:block;padding:13px 0;text-align:center;color:var(--mute);letter-spacing:.32em}
 .gallery-foot{padding-block:34px 55px;border-top:1px solid var(--line)}
 .gallery-foot .wrap{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}
 .gallery-foot nav{display:flex;gap:20px;flex-wrap:wrap;font-size:.74rem}
@@ -163,6 +166,11 @@ ul,ol{padding-inline-start:1.4em}
 .post p{font-size:.9rem;margin:8px 0;white-space:pre-line}
 .post .visual{aspect-ratio:1.86;width:100%;margin:11px 0 8px;border-radius:7px}
 .post .post-work-image{max-width:340px;aspect-ratio:1.28}
+.post-photo-button{display:block;width:100%;max-width:460px;padding:0;border:0;background:transparent;text-align:left;cursor:zoom-in}
+.post .buyer-photo,.buyer-photo-full .buyer-photo{aspect-ratio:1}
+.buyer-note{position:absolute;top:11%;left:7%;display:grid;gap:2px;padding:5px 7px;background:#e9ddb0;color:#38301e;font:600 clamp(.64rem,1.55vw,.82rem)/1.25 ui-monospace,monospace;white-space:nowrap;transform:rotate(-8deg);box-shadow:1px 2px 4px #19140e65}
+.buyer-note-title{display:block;font:650 .85em/1.1 var(--sans);padding-bottom:3px;border-bottom:1px solid #8e7e5660}
+.buyer-note b{font-size:.88em;color:#675233}
 .post .post-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;color:var(--mute);font-size:.76rem}
 .post .slip{max-width:350px;background:#f0eadc;margin:10px 0;padding:13px 16px;color:#403b2e;font: .82rem/1.55 ui-monospace,monospace;box-shadow:1px 3px 9px #42382920;white-space:pre-line}
 .telegraph-clipping{max-width:490px;padding:13px 15px;margin:12px 0;background:repeating-linear-gradient(1deg,#ede3cf 0px,#ede3cf 2px,#f1e7d4 4px);border:1px solid #d8c7a7;box-shadow:1px 3px 9px #42382920;color:#392e23}
@@ -176,6 +184,26 @@ ul,ol{padding-inline-start:1.4em}
 .telegraph-clipping dd{margin:0;white-space:nowrap}
 dialog{border:0;color:var(--ink);background:var(--bg);padding:0;max-width:min(100% - 32px,1050px);max-height:calc(100dvh - 32px);width:100%;overflow:auto;overscroll-behavior:contain;box-shadow:0 20px 90px #15161146}
 dialog[open]{animation:enter .23s ease-out}
+.buyer-dialog,.photo-dialog,.search-dialog{--bg:#f7f5ef;--ink:#222522;--line:#d9d6cb}
+.buyer-dialog{width:min(100%,420px)}
+.buyer-dialog-content,.search-content{padding:20px 22px 25px}
+.buyer-dialog-content>p{margin-bottom:16px}
+.buyer-dialog form{display:grid;gap:6px}
+.buyer-dialog label{font-size:.8rem;margin-top:4px}
+.buyer-dialog input{width:100%;min-height:42px;border:1px solid #aaa699;border-radius:0;background:#fff;color:var(--ink);padding:6px 9px;font-size:16px}
+.buyer-dialog form .action{justify-self:start;margin-top:4px}
+[data-login-error]{font-size:.78rem;color:#833f34;min-height:1.5em}
+.buyer-access{padding:13px 0 0;border-top:1px solid var(--line);margin-top:12px}
+.buyer-access p{font-size:.85rem;margin-bottom:10px}
+.photo-dialog{width:min(100%,630px)}
+.buyer-photo-full .buyer-note{font-size:clamp(.74rem,2.1vw,1.05rem)}
+.search-dialog{--bg:#fcfbf8;width:min(100%,680px)}
+.search-field{display:flex;align-items:center;gap:9px;border:1px solid #d0d3cc;border-radius:22px;background:#fff;padding:7px 13px}
+.search-field>span{font-size:1.3rem;line-height:1}
+.search-field input{flex:1;min-width:0;color:var(--ink);font-size:16px;background:transparent;border:0}
+.search-results{list-style:none;padding:0;margin:14px 0 0}
+.search-results li{padding:11px 1px;border-bottom:1px solid #e1e1da}
+.search-results h2{color:#234f64;font:600 clamp(.88rem,2.2vw,1.08rem)/1.5 var(--sans)}
 dialog::backdrop{background:#171a19a8}
 @keyframes enter{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .modal-head{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:11px 18px;border-bottom:1px solid var(--line);min-height:52px}
@@ -312,6 +340,10 @@ dialog::backdrop{background:#171a19a8}
   .site-head nav{order:3;width:100%;gap:20px;overflow:auto;padding-block:8px 7px}
   .site-head nav a{font-size:.75rem}
   .auction-link{font-size:.6rem;gap:7px}
+  .head-actions{gap:8px}
+  .gallery .auction-link-label{display:none}
+  .buyer-nav{font-size:.7rem;padding:4px 7px}
+  .timeline li button{grid-template-columns:74px minmax(0,1fr) auto;gap:7px}
   .gallery-hero{grid-template-columns:1fr;gap:16px;padding-block:24px 24px}
   .hero-info{padding:8px 0 0}
   .hero-info .eyebrow{margin-bottom:16px}
@@ -382,6 +414,8 @@ const CONFIG = {
   failOnPoliceWrongAnswer: true,
   debug: new URLSearchParams(location.search).get('debug') === '1'
 };
+
+const BUYER_ACCOUNT = {id:'buyer26', password:'ringo482'};
 
 const artworks = [
   {
@@ -574,7 +608,7 @@ const company = {
 
 const socialPosts = [
   {date:'2026.10.03 / 08:40', artwork:'glass', intro:'新作の撮影に立ち会いました。透明なものを載せると、背景の布の色まで主張するので難しい。', likes:61},
-  {date:'2026.10.01 / 13:05', image:'toast', alt:'黄色い皿に載った焦げたトースト', copy:'トースターの「4」が4分のことだと知りました。昨日は4の焼き加減だと思っていました。今日もよく焦げています。', likes:11},
+  {date:'2026.10.01 / 13:05', image:'toast', alt:'黄色い皿に載った焦げたトーストとコーヒー', buyerNote:true, copy:'トースターの「4」が4分のことだと知りました。昨日は4の焼き加減だと思っていました。今日もよく焦げています。', likes:11},
   {date:'2026.09.28 / 12:22', image:'cafe', alt:'木のテーブルに置かれたコーヒーカップ', copy:'昼休みだけ晴れたので、角の喫茶店へ。今日こそナポリタンにするつもりが、結局またトーストでした。', likes:14},
   {date:'2026.09.22 / 08:24', copy:'エレベーターで「閉」を押したつもりが「開」。乗ってきた人にお礼を言われました。いいことをした顔で降りました。', likes:10},
   {date:'2026.09.15 / 17:54', artwork:'amber', intro:'琥珀の作業写真を整理。静止画ばかりだと思っていたら、こちらの一枚だけ挙動が違っていて少し驚いた。', likes:38},
@@ -601,11 +635,46 @@ const socialPosts = [
 ];
 
 const chronology = [
-  ['2012','5歳','青葉こども絵画展　審査員賞'],
-  ['2014','7歳','北浜児童美術展　最優秀賞'],
-  ['2016','9歳','光庭ジュニア・アート賞　大賞'],
-  ['2017','10歳','ちいさな画家たち展　招待出品'],
-  ['2019','12歳','青葉市文化会館　個展「同じかたち」']
+  {
+    year:'2012', age:'5歳', event:'青葉こども絵画展　審査員賞',
+    headlines:[
+      '青葉こども絵画展の審査員賞に5歳の水田ミチルさん',
+      'りんごの影まで描いた一枚　こども絵画展で足を止める来場者',
+      '入賞作品を市民ロビーに展示　青葉こども絵画展'
+    ]
+  },
+  {
+    year:'2014', age:'7歳', event:'北浜児童美術展　最優秀賞',
+    headlines:[
+      '北浜児童美術展、木肌を思わせるりんごの絵が最優秀賞',
+      '画面の真ん中にりんご一つ　7歳の作品に会場で反響',
+      '北浜児童美術展の受賞作、週末まで一般公開'
+    ]
+  },
+  {
+    year:'2016', age:'9歳', event:'光庭ジュニア・アート賞　大賞',
+    headlines:[
+      '光庭ジュニア・アート賞　大賞は水田ミチルさん',
+      '素材を変えて描いたりんご　大賞受賞作を会場で紹介',
+      '子どもたちが選んだ一枚　光庭の受賞作展を訪ねて'
+    ]
+  },
+  {
+    year:'2017', age:'10歳', event:'ちいさな画家たち展　招待出品',
+    headlines:[
+      '「ちいさな画家たち展」開幕　水田ミチルさんが招待出品',
+      '同じりんご、違う手触り　小学生の作品に来場者が見入る',
+      '作品を見比べる親子でにぎわう　ちいさな画家たち展'
+    ]
+  },
+  {
+    year:'2019', age:'12歳', event:'青葉市文化会館　個展「同じかたち」',
+    headlines:[
+      '青葉市文化会館で水田ミチル初個展「同じかたち」',
+      '木片の素描からガラスのりんごまで　12歳の初個展に反響',
+      '2019.12.26 ｜ 昨夜から水田ミチルさんと連絡取れず　「同じかたち」年明けの展示は中止'
+    ]
+  }
 ];
 
 const disappearancePlaces = ['公園','こうえん','公園でさらわれた','こうえんでさらわれた','家の近くの公園','いえのちかくのこうえん','自宅近くの公園','自宅の近くの公園','家近くの公園','家のそばの公園','うちの近くの公園'];
@@ -663,7 +732,7 @@ const newsArticles = [
     body:'捜索班が西港支店の第三保管棟で水田ミチルさん（19）を保護した。通報者は絵に残された複数の手掛かりを解読していた。',
     image:'port', alt:'第三保管棟の近くにある港と赤い灯台',
     sections:[
-      {title:'クリスマスの夜に途絶えた足取り', text:'水田さんが姿を消したのは2019年12月25日の夜。当時12歳だった。家の近くの公園で姿を見かけたという記録が残る。翌26日、文化会館は本人に連絡が取れないとして次の展示を延期した。捜査関係者によると、水田さんは公園にいる間に管理会社に出入りする者たちに連れ去られた。'},
+      {title:'クリスマスの夜に途絶えた足取り', text:'水田さんが姿を消したのは2019年12月25日の夜。当時12歳だった。家の近くの公園で姿を見かけたという記録が残る。翌26日、文化会館は本人に連絡が取れないとして、年明けに予定していた展示の中止を発表した。捜査関係者によると、水田さんは公園にいる間に管理会社に出入りする者たちに連れ去られた。'},
       {title:'窓のない部屋に聞こえた汽笛', text:'通報者は、貝殻を並べた作品の長短を古い電信の対応表で読み、「汽笛」と「港」に行き着いた。赤い灯台のある港と照らし合わせ、広報担当者の投稿に映る納品控え WM-417 を台帳と照合。施設コード AP-07 は西港支店の第三保管棟を指していた。'},
       {title:'親しい人にしか分からない名前', text:'水田さんは木の年輪に「こうえんでさらわれた」、毛皮の作品に「サキ」という名前を残した。琥珀の写真で浮かんだ「STILL HERE」を窓口に送った通報者に、本人は記憶について三つ質問した。回答を聞いた水田さんは、絵を読んでくれた相手だと判断し、部屋の外に三人の見張りがいると伝えた。'}
     ]
@@ -840,6 +909,7 @@ const state = {
   route: {site:'gallery',page:'home',art:null},
   phase: 'playing',
   modal: null,
+  buyerLoggedIn: false,
   chatStage: 'normal',
   chatStep: 0,
   chatLog: [{kind:'guest',text:'I draw Applesの窓口へようこそ。展示や作品購入についてお尋ねください。'}],
@@ -945,7 +1015,7 @@ function applyRoute(target, y = 0) {
   }
   if (state.phase !== 'playing') return;
   if (target.art) openArtwork(target.art);
-  else if (state.modal === 'art') closeDialog();
+  else if (['art','buyer-login'].includes(state.modal)) closeDialog();
   if (!samePage || !target.art) window.scrollTo(0,y);
 }
 
@@ -996,11 +1066,14 @@ function header(site) {
   });
   if (site === 'company') items.push(link('gallery','home','ギャラリー'));
   if (site === 'social') items.push(link('company','staff','所属先'),link('gallery','home','ギャラリー'));
-  const auction = `<span class="live-dot" aria-hidden="true"></span><span>LIVE AUCTION</span><span class="mono" data-auction-clock>60:00</span>`;
+  const auction = `<span class="live-dot" aria-hidden="true"></span><span class="auction-link-label">LIVE AUCTION</span><span class="mono" data-auction-clock>60:00</span>`;
   return `<header class="site-head"><div class="wrap">
     ${link(site,logoPage,e(title),'logo')}
     <nav aria-label="サイト内メニュー">${items.join('')}</nav>
-    ${artLink('glass',auction,'auction-link')}
+    <div class="head-actions">
+      ${artLink('glass',auction,'auction-link')}
+      ${site === 'gallery' ? `<button type="button" class="buyer-nav" data-action="buyer-login" data-buyer-nav aria-haspopup="dialog">${state.buyerLoggedIn ? 'ログイン済み' : '購入者ログイン'}</button>` : ''}
+    </div>
   </div></header>`;
 }
 
@@ -1076,16 +1149,12 @@ function galleryPage(page) {
           <div class="prose"><p>2007年生まれ。19歳。幼少期からりんごを繰り返し描き、木、金属、繊維など、素材ごとに表面の質感を探る。</p>
           <p>12歳で開いた個展「同じかたち」では、家のそばで拾った枝や木片をモチーフにした素描も展示。図録には、同じ公園で遊んだ友人への短い献辞が残っている。</p>
           <p>図録の献辞は「S.へ」。友人のことは、後年の作品でもたびたび触れられている。</p>
-          <aside class="artist-archive" aria-label="当時の展示記録">
-            <time datetime="2019-12-26">2019.12.26</time>
-            <strong>次回展示の延期について</strong>
-            <p>昨夜から作家本人と連絡が取れないため、年明けに予定していた展示を延期します。</p>
-            <small>青葉市文化会館・展示記録より</small>
-          </aside>
           <p>近年の制作については、作品に付した作家ノートをご覧ください。</p>
           ${link('gallery','works','作品一覧へ →','line-action')}</div>
           <div aria-label="主な受賞歴・展示歴"><ol class="timeline">
-            ${chronology.map(([year,age,event])=>`<li><span>${year} <small>${age}</small></span><span>${e(event)}</span></li>`).join('')}
+            ${chronology.map(({year,age,event},index)=>`<li><button type="button" data-exhibition="${index}" aria-haspopup="dialog">
+              <span>${e(year)} <small>${e(age)}</small></span><span>${e(event)}</span><span class="timeline-open" aria-hidden="true">↗</span>
+            </button></li>`).join('')}
             <li class="gap" aria-label="以降の受賞・展示記録なし">···</li>
           </ol></div>
         </div>`);
@@ -1221,6 +1290,23 @@ function telegraphClipping() {
   </figure>`;
 }
 
+function buyerPhoto(post, lazy = false) {
+  const note = `<span class="buyer-note">
+    <span class="buyer-note-title">購入者ページ</span>
+    <span><b>ID</b> ${e(BUYER_ACCOUNT.id)}</span>
+    <span><b>PASS</b> ${e(BUYER_ACCOUNT.password)}</span>
+  </span>`;
+  return visual(post.image,post.alt,{className:'photo buyer-photo',lazy,extra:note});
+}
+
+function openBuyerPhoto() {
+  if (!withinTime()) return;
+  const post = socialPosts.find(entry=>entry.buyerNote);
+  showDialog('buyer-photo','photo-dialog',`
+    ${modalHead('田中ユウキ',post.date)}
+    <figure class="buyer-photo-full">${buyerPhoto(post)}</figure>`);
+}
+
 function socialPage() {
   return `<main class="social-layout" id="content">
     <aside class="social-profile">${socialAvatar()}<h1>田中ユウキ</h1><p>@yuuki_archive</p>
@@ -1235,7 +1321,10 @@ function socialPage() {
         return `<article class="post">
           <div class="post-head">${socialAvatar()}<div><strong>田中ユウキ</strong><small>${e(post.date)}</small></div></div>
           <p>${e(copy)}</p>
-          ${art ? artLink(art.id,artworkVisual(art,{className:'post-work-image',lazy:true})) : post.image ? visual(post.image,post.alt,{className:'photo',lazy:true}) : ''}
+          ${post.buyerNote
+            ? `<button type="button" class="post-photo-button" data-action="buyer-photo" aria-label="${e(post.alt)}の写真を拡大" aria-haspopup="dialog">${buyerPhoto(post,true)}</button>`
+            : art ? artLink(art.id,artworkVisual(art,{className:'post-work-image',lazy:true}))
+            : post.image ? visual(post.image,post.alt,{className:'photo',lazy:true}) : ''}
           ${post.slip ? `<div class="slip" aria-label="画像に写った納品控え">${e(post.slip)}</div>` : ''}
           ${post.telegraph ? telegraphClipping() : ''}
           <div class="post-foot"><span>♡ ${post.likes}</span>${art ? artLink(art.id,e(art.title)+' / 作品を見る →') : ''}</div>
@@ -1324,6 +1413,58 @@ function modalHead(title, label = '', controls = '<button type="button" class="c
   return `<div class="modal-head"><div id="dialog-title" class="terminal-head">
     ${label ? `<span class="eyebrow">${e(label)}</span>` : ''}<strong>${e(title)}</strong></div>
     ${controls}</div>`;
+}
+
+function openBuyerLogin() {
+  if (!withinTime()) return;
+  const content = state.buyerLoggedIn
+    ? '<p>ログインしました。各作品のページで作家ノートをご覧いただけます。</p><button type="button" class="action" data-action="close">ギャラリーに戻る</button>'
+    : `<form data-form="buyer-login" autocomplete="off">
+      <label for="buyer-id">ログインID</label>
+      <input id="buyer-id" name="buyerId" type="text" data-buyer-input autocapitalize="none" spellcheck="false" required>
+      <label for="buyer-password">パスワード</label>
+      <input id="buyer-password" name="buyerPassword" type="password" data-buyer-input required>
+      <p data-login-error aria-live="polite"></p>
+      <button type="submit" class="action" data-send>ログイン</button>
+    </form>`;
+  showDialog('buyer-login','buyer-dialog',`
+    ${modalHead('購入者ログイン','I draw Apples')}
+    <div class="buyer-dialog-content">${content}</div>`);
+  $('#buyer-id',dialog)?.focus({preventScroll:true});
+}
+
+function submitBuyerLogin(form) {
+  if (!withinTime() || state.modal !== 'buyer-login') return;
+  const id = form.elements.namedItem('buyerId');
+  const password = form.elements.namedItem('buyerPassword');
+  if (id.value.normalize('NFKC').trim().toLowerCase() !== BUYER_ACCOUNT.id
+    || password.value.normalize('NFKC').trim() !== BUYER_ACCOUNT.password) {
+    $('[data-login-error]',form).textContent = 'ログインIDまたはパスワードをご確認ください。';
+    password.focus();
+    return;
+  }
+  state.buyerLoggedIn = true;
+  const nav = $('[data-buyer-nav]');
+  if (nav) nav.textContent = 'ログイン済み';
+  if (state.route.art) openArtwork(state.route.art);
+  else openBuyerLogin();
+}
+
+function openExhibitionSearch(index) {
+  if (!withinTime()) return;
+  const entry = chronology[index];
+  if (!entry) return;
+  showDialog('exhibition-search','search-dialog',`
+    ${modalHead('検索結果','ウェブ検索')}
+    <div class="search-content">
+      <label class="sr" for="exhibition-query">検索キーワード</label>
+      <div class="search-field"><span aria-hidden="true">⌕</span>
+        <input id="exhibition-query" type="text" value="${e(entry.event)}" readonly>
+      </div>
+      <ul class="search-results">
+        ${entry.headlines.map(headline=>`<li><h2>${e(headline)}</h2></li>`).join('')}
+      </ul>
+    </div>`);
 }
 
 function woodAxisY(puzzle,x) {
@@ -1430,23 +1571,26 @@ function openArtwork(id) {
     <button type="button" data-adjacent="${next.id}" class="quiet-action">次の作品 →</button>`;
   const focusedControl = document.activeElement?.closest?.('[data-adjacent]');
   const focusSelector = focusedControl?.matches(':last-child') ? '[data-adjacent]:last-child' : '[data-adjacent]';
+  const notes = state.buyerLoggedIn
+    ? `<p class="eyebrow">Artist’s Note</p><p class="art-copy">${e(art.description)}</p>${artworkDetail(art)}`
+    : `<div class="buyer-access"><p>ミチル直筆の幻想的な解説文をご覧になりたい場合は、ログインが必要です。</p>
+      <button type="button" class="line-action" data-action="buyer-login" aria-haspopup="dialog">購入者ログイン</button></div>`;
   showDialog('art','art-dialog',`${modalHead('作品詳細','Collection')}
     <div class="art-layout">
-      <figure>${artworkVisual(art,{extra:artOverlay(art)})}</figure>
+      <figure>${artworkVisual(art,{extra:state.buyerLoggedIn ? artOverlay(art) : ''})}</figure>
       <div>
         <div class="art-category">${art.newArrival ? 'New / Live Auction' : 'Sold Out'}</div>
         <h2>${e(art.title)}</h2>
         <p>${e(art.subtitle)}</p>
         <p class="art-meta">${e(art.material)} / ${art.year}${art.price ? ' / '+yen.format(art.price) : ''}</p>
-        <p class="eyebrow">Artist’s Note</p><p class="art-copy">${e(art.description)}</p>
-        ${artworkDetail(art)}
+        ${notes}
         ${art.newArrival ? auctionStrip() : ''}
       </div>
     </div><div class="art-controls">${buttons}</div>`);
   if (focusedControl) {
     $(focusSelector,dialog)?.focus({preventScroll:true});
   }
-  if (state.modal === 'art' && art.puzzle?.kind === 'amber') {
+  if (state.modal === 'art' && state.buyerLoggedIn && art.puzzle?.kind === 'amber') {
     amberTimer = setTimeout(()=>{
       const phrase = $('[data-amber]',dialog);
       if (!phrase || state.route.art !== id) return;
@@ -1491,8 +1635,8 @@ const publicQuestions = [
   ['作家について知りたい', '作家の経歴は、Artistページに掲載しております。']
 ];
 const SOS = [
-  '窓のない部屋にいます。明け方に船の汽笛が聞こえるんです。外にいた人は三人。',
-  '来る途中、赤い灯台が見えました。ここに届く荷物の番号を、広報の人が控えていたはずです。',
+  '窓のない部屋にいます。扉の外には、見張りが三人います。',
+  '窓がなくても外のことが分かるように、ぼくの知っていることを絵に残しました。',
   '競売が終わったら別の場所に連れて行くと言われました。ぼくの代わりに通報してくれませんか。'
 ];
 
@@ -1579,7 +1723,7 @@ function beginSOS() {
 function sendChat(value) {
   if (!withinTime() || !value.trim() || state.chatStage !== 'normal') return;
   addMessage(state.chatLog,'mine',value);
-  if (normalizePhrase(value) === normalizePhrase(CONFIG.secretChatPhrase)) {
+  if (state.buyerLoggedIn && normalizePhrase(value) === normalizePhrase(CONFIG.secretChatPhrase)) {
     beginVerification();
   } else {
     const faq = publicQuestions.find(([question])=>matches(value,[question]));
@@ -1923,6 +2067,10 @@ function closeActiveModal() {
     return;
   }
   if (['news','loss'].includes(state.modal)) return;
+  if (state.modal === 'buyer-login' && state.route.art) {
+    openArtwork(state.route.art);
+    return;
+  }
   if (state.modal === 'art') {
     if (history.state?.artBack) {
       history.back();
@@ -2015,7 +2163,7 @@ document.addEventListener('error',event=>{
 },true);
 
 document.addEventListener('click',event=>{
-  const target = event.target.closest('[data-route],[data-action],[data-adjacent],[data-choice],[data-suggestion],[data-article],[data-debug]');
+  const target = event.target.closest('[data-route],[data-action],[data-adjacent],[data-choice],[data-suggestion],[data-article],[data-exhibition],[data-debug]');
   if (!target) return;
   if (target.matches('a') && (event.ctrlKey || event.shiftKey || event.metaKey || event.altKey)) return;
   event.preventDefault();
@@ -2035,10 +2183,14 @@ document.addEventListener('click',event=>{
     sendChat(publicQuestions[Number(target.dataset.suggestion)][0]);
   } else if (target.dataset.article !== undefined) {
     openNewsArticle(Number(target.dataset.article));
+  } else if (target.dataset.exhibition !== undefined) {
+    openExhibitionSearch(Number(target.dataset.exhibition));
   } else if (target.dataset.debug) {
     debugAction(target.dataset.debug);
   } else {
     switch (target.dataset.action) {
+      case 'buyer-login': openBuyerLogin(); break;
+      case 'buyer-photo': openBuyerPhoto(); break;
       case 'chat': openChat(); break;
       case 'close': closeActiveModal(); break;
       case 'hangup': hangUp(); break;
@@ -2059,7 +2211,11 @@ document.addEventListener('click',event=>{
   }
 });
 
-function submitTerminal(form) {
+function submitModalForm(form) {
+  if (form.dataset.form === 'buyer-login') {
+    submitBuyerLogin(form);
+    return;
+  }
   const field = form.elements.namedItem('answer');
   const answer = field.value;
   if (!answer.trim()) {
@@ -2075,19 +2231,20 @@ dialog.addEventListener('click',event=>{
   const button = event.target.closest('[data-send]');
   if (!button) return;
   event.preventDefault();
-  submitTerminal(button.form);
+  submitModalForm(button.form);
 });
 
 dialog.addEventListener('keydown',event=>{
-  if (event.key !== 'Enter' || event.isComposing || event.keyCode === 229 || !event.target.matches('#terminal-input')) return;
+  if (event.key !== 'Enter' || event.isComposing || event.keyCode === 229) return;
+  if (!event.target.matches('#terminal-input') && !event.target.matches('[data-buyer-input]')) return;
   event.preventDefault();
-  if (!event.repeat) submitTerminal(event.target.form);
+  if (!event.repeat) submitModalForm(event.target.form);
 });
 
 dialog.addEventListener('submit',event=>{
   if (!event.target.matches('form[data-form]')) return;
   event.preventDefault();
-  submitTerminal(event.target);
+  submitModalForm(event.target);
 });
 
 dialog.addEventListener('cancel',event=>{
